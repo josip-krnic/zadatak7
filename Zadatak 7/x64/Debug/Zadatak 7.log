@@ -1,0 +1,5 @@
+﻿  requisites.c
+C:\Users\Dora\Desktop\Zadatak 7\Zadatak 7\requisites.c(12,2): warning C4013: 'gets' undefined; assuming extern returning int
+C:\Users\Dora\Desktop\Zadatak 7\Zadatak 7\requisites.c(28,26): warning C4013: 'malloc' undefined; assuming extern returning int
+C:\Users\Dora\Desktop\Zadatak 7\Zadatak 7\requisites.c(28,51): warning C4312: 'type cast': conversion from 'int' to 'Position' of greater size
+  Zadatak 7.vcxproj -> C:\Users\Dora\Desktop\Zadatak 7\x64\Debug\Zadatak 7.exe
