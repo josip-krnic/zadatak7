@@ -12,7 +12,7 @@ int readFromConsole(Position P)
 	gets(buffer);
 	sscanf(buffer, " %s %s", command, directoryName);
 	
-	if (!strcmp(command, "Directory"))
+	if (!strcmp(command, "dir"))
 	{
 		printContent(P);
 	}
