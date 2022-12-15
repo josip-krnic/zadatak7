@@ -1,25 +1,44 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "requisites.h"
 
 
 int main()
 {
-    int choice;
-    Position head;
-
-    choice = 0;
-    head = (Position)malloc(sizeof(Directory));
-    head->child = NULL;
-    head->sibling = NULL;
-    strcpy(head->name, "C:");
+    int returnVal;
+    Position root;
+    Poz stack;
+    returnVal = 0;
     
     
-    while (!choice)
-        choice = readFromConsole(head);
+    stack = malloc(sizeof(Stog));
+    if (stack == NULL)
+    {
+        printf("Insufficient ram space!");
+        return PROGRAM_FAIL;
+    }
+    initStog(stack);
+    
+    root = malloc(sizeof(Directory));
+    if (root ==NULL)
+    {
+        printf("Insufficient ram space!");
+        return PROGRAM_FAIL;
+    }
+    initDir(root);
+    
+    strcpy(root->name, "D:");
+    
+    printMsg();
 
-    return 0;
+    while (returnVal!=EXIT) {
+        returnVal = consoleHandler(&root, stack);
+    }
+    emptyStack(stack, &root);
+    deleteTree(root);
+    free(stack);
+    return PROGRAM_SUCCESS;
 }
-
